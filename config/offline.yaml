@@ -1,0 +1,52 @@
+data_dir: /home/lilinzhou/dataset/INSTA
+output_dir: ./output/
+template_type: Flame
+
+dataset:
+  pin_memory: True
+  use_shape_weight: True
+  use_pose_weight: True
+
+model:
+  tex_size: 256
+  num_basis_in: 129
+  num_basis_blend: 20
+  use_blend: True
+  use_weight_proj: True
+  use_mlp_proj: True
+
+  init_scaling: 0.0008
+  init_opacity: 0.5
+
+train:
+  batch_size: 10
+  iteration: 50_000
+
+  recon:
+    blend_start_iter: 3000
+    use_fast_forward: True
+    random_bg_color: True
+    bg_color: [0.0, 0.0, 0.0]
+
+    scene_extent: 1.0
+    position_lr: 0.0008
+    position_lr_final: 0.000008
+    position_lr_delay_mult: 0.01
+    position_lr_max_steps: 30_000
+    opacity_lr: 0.25
+    scaling_lr: 0.025
+    rotation_lr: 0.005
+    feature_lr: 0.0125
+
+    position_b_lr_scale: 0.05
+    rotaion_b_lr_scale: 0.5
+    feature_b_lr_scale: 0.5
+
+    weight_module_lr: 0.001
+
+    lambda_l1: 1.0
+    lambda_ssim: 0.0
+    lambda_lpips: 0.0
+    lambda_alpha: 0.0
+    lambda_sparsity: 0.0
+    lambda_orth: 0.0
