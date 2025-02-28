@@ -53,7 +53,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="Training script parameters")
     parser.add_argument("--subject", type=str, default="bala")
     parser.add_argument("--work_name", type=str, default=None)
-    parser.add_argument("--config", type=str, default="config/offline_flame.yaml")
+    parser.add_argument("--config", type=str, default="config/offline.yaml")
     parser.add_argument("--split", type=str, default="train")
     parser.add_argument("--preload", action="store_true")
     parser.add_argument("--log", action="store_true")

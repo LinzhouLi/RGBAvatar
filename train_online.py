@@ -192,7 +192,7 @@ if __name__ == "__main__":
     parser.add_argument("--subject", type=str, default="bala")
     parser.add_argument("--work_name", type=str, default=None)
     parser.add_argument("--video_fps", type=int, default=25)
-    parser.add_argument("--config", type=str, default="config/online_flame.yaml")
+    parser.add_argument("--config", type=str, default="config/online.yaml")
     parser.add_argument("--log", action="store_true")
     args = parser.parse_args(sys.argv[1:])
     with open(args.config) as f: config = yaml.load(f, Loader=yaml.FullLoader)
