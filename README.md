@@ -1,6 +1,6 @@
 # RGBAvatar
 
-
+TL;DR Our RGBAvatar reconstructs a high-fidelity head avatar from a monocular video stream on the fly.
 
 
 ## Installation
@@ -18,9 +18,7 @@
    conda create -n rgbavatar python=3.10
    ```
 
-3. Install [PyTorch](https://pytorch.org/get-started/locally/).
-
-4. Install [nvdiffrast](https://nvlabs.github.io/nvdiffrast/).
+3. Install [PyTorch](https://pytorch.org/get-started/locally/) and [nvdiffrast](https://nvlabs.github.io/nvdiffrast/).
 
 5. Install other packages.
 
@@ -62,7 +60,7 @@ python train_offline.py --subject SUBJECT_NAME --work_name WORK_NAME --config CO
 ```
 
 <details>
-<summary><span style="font-weight: bold;">Command Line Arguments for train.py</span></summary>
+<summary><span style="font-weight: bold;">Command Line Arguments for train_offline.py</span></summary>
 
   #### --subject
   Subject name for training (`bala` by default).
@@ -74,9 +72,7 @@ python train_offline.py --subject SUBJECT_NAME --work_name WORK_NAME --config CO
   Use `train`/`test`/`all` split of the image sequence (`train` by default).
   #### --preload
   Whether to preload image data to CPU memory, which accelerate the training speed.
-
-#### --log
-
+  #### --log
   Whether to output log information during training.
 
 </details>
@@ -88,11 +84,70 @@ python train_offline.py --subject SUBJECT_NAME --work_name WORK_NAME --config CO
 python train_online.py --subject SUBJECT_NAME --work_name WORK_NAME --config CONFIG_FILE_PATH --video_fps 25
 ```
 
+<details>
+<summary><span style="font-weight: bold;">Command Line Arguments for train_online.py</span></summary>
 
+  #### --subject
+  Subject name for training (`bala` by default).
+  #### --work_name
+  A nick name for the experiment, training results will be saved under `output/WORK_NAME`.
+  #### --config
+  Config file path (`config/online.yaml` by default).
+  #### --video_fps
+  FPS of the input video stream (`25` by default ).
+  #### --log
+  Whether to output log information during training.
+
+</details>
+<br>
 
 ### Evaluation
 
 ```
 python calculate_metrics.py --subject SUBJECT_NAME --work_name WORK_NAME --config CONFIG_FILE_PATH
+```
+
+<details>
+<summary><span style="font-weight: bold;">Command Line Arguments for calculate_metrics.py</span></summary>
+
+  #### --subject
+  Subject name for training (`bala`  by default).
+  #### --output_dir
+  Path of the expeirment output folder (`output` by default).
+  #### --work_name
+  Name of the experiment to be evaluated.
+  #### --split
+  Frame number where split the training and test set. (`-350` by default ).
+
+</details>
+<br>
+
+### Rendering
+
+```
+python render.py --subject SUBJECT_NAME --work_name WORK_NAME
+```
+
+<details>
+<summary><span style="font-weight: bold;">Command Line Arguments for render.py</span></summary>
+
+  #### --subject
+  Subject name for training (`bala`  by default).
+  #### --output_dir
+  Path of the expeirment output folder (`output` by default).
+  #### --work_name
+  Name of the experiment to be rendered.
+  #### --white_bg
+  Whether to use white background, back by default.
+  #### --alpha
+  Whether to render the alpha channel.
+
+</details>
+<br>
+
+## Citation
+
+```
+TBD
 ```
 

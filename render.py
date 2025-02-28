@@ -52,7 +52,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(description="Rendering script parameters")
     parser.add_argument("--subject", type=str, default="bala")
     parser.add_argument("--output_dir", type=str, default="output")
-    parser.add_argument("--work_name", type=str, default="default")
+    parser.add_argument("--work_name", type=str, required=True)
     parser.add_argument("--white_bg", action="store_true")
     parser.add_argument("--alpha", action="store_true")
     args = parser.parse_args(sys.argv[1:])
