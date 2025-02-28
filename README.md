@@ -1,6 +1,6 @@
 # RGBAvatar
 
-TL;DR Our RGBAvatar reconstructs a high-fidelity head avatar from a monocular video stream on the fly.
+TL;DR Our method reconstructs a high-fidelity head avatar from a monocular video stream on the fly.
 
 
 ## Installation
@@ -76,7 +76,6 @@ python train_offline.py --subject SUBJECT_NAME --work_name WORK_NAME --config CO
   Whether to output log information during training.
 
 </details>
-<br>
 
 ### Online Training
 
@@ -99,7 +98,6 @@ python train_online.py --subject SUBJECT_NAME --work_name WORK_NAME --config CON
   Whether to output log information during training.
 
 </details>
-<br>
 
 ### Evaluation
 
@@ -120,7 +118,6 @@ python calculate_metrics.py --subject SUBJECT_NAME --work_name WORK_NAME --confi
   Frame number where split the training and test set. (`-350` by default ).
 
 </details>
-<br>
 
 ### Rendering
 
@@ -143,7 +140,6 @@ python render.py --subject SUBJECT_NAME --work_name WORK_NAME
   Whether to render the alpha channel.
 
 </details>
-<br>
 
 ## Citation
 
